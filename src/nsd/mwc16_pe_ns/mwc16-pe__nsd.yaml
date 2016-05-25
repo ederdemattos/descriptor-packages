@@ -94,7 +94,7 @@ nsd:nsd-catalog:
             parameter:
             -   name: Corporation Name
                 data-type: string
-                default-value: SP Test Corp
+                default-value: SP_Test_Corp
                 mandatory: 'true'
             -   name: Tunnel Key
                 data-type: integer
