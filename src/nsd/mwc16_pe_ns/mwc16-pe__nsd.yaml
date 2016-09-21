@@ -15,6 +15,7 @@ nsd:nsd-catalog:
         vld:
         -   id: 6WindTR1.1.2__3 to OpenStack
             name: 6WindTR1.1.2__3 to OpenStack
+            short-name: 6WindTR1.1.2__3 to OpenStack
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -25,6 +26,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: 6WindTR1.1.2
         -   id: 6WindTR1.1.2__1 enty point
             name: 6WindTR1.1.2__1 enty point
+            short-name: 6WindTR1.1.2__1 enty point
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -35,6 +37,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: 6WindTR1.1.2
         -   id: 6WindTR1.1.2__2 entry point
             name: 6WindTR1.1.2__2 entry point
+            short-name: 6WindTR1.1.2__2 entry point
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -45,6 +48,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: 6WindTR1.1.2
         -   id: management
             name: management
+            short-name: management
             provider-network:
                 overlay-type: VLAN
                 physical-network: mgmt
@@ -61,6 +65,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: 6WindTR1.1.2
         -   id: 6WindTR1.1.2__2-6WindTR1.1.2__3
             name: 6WindTR1.1.2__2-6WindTR1.1.2__3
+            short-name: 6WindTR1.1.2__2-6WindTR1.1.2__3
             type: ELAN
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '2'
@@ -81,6 +86,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: 6WindTR1.1.2
         -   id: 6WindTR1.1.2__1-6WindTR1.1.2__2
             name: 6WindTR1.1.2__1-6WindTR1.1.2__2
+            short-name: 6WindTR1.1.2__1-6WindTR1.1.2__2
             type: ELAN
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '1'

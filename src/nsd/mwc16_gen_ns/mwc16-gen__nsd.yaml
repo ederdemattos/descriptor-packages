@@ -11,6 +11,7 @@ nsd:nsd-catalog:
         vld:
         -   id: connection 0
             name: connection 0
+            short-name: connection 0
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -21,6 +22,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: mwc16gen
         -   id: connection 1
             name: connection 1
+            short-name: connection 1
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -31,6 +33,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: mwc16gen
         -   id: connection 2
             name: connection 2
+            short-name: connection 2
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -42,6 +45,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: mwc16gen
         -   id: connection 3
             name: connection 3
+            short-name: connection 3
             type: ELAN
             provider-network:
                 overlay-type: VLAN

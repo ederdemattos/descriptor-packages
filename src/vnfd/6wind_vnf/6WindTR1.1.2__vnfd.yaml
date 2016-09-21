@@ -6,98 +6,98 @@ vnfd:vnfd-catalog:
         logo: 6wind_2x.png
         mgmt-interface:
             vdu-id: VM
-            vnf-configuration:
-                config-attributes:
-                    config-delay: '0'
-                    config-priority: '0'
-                config-primitive:
-                -   name: configure-interface
-                    parameter:
-                    -   name: iface-name
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: cidr
-                        data-type: STRING
-                -   name: add-corporation
-                    parameter:
-                    -   name: domain-name
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: iface-name
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: vlan-id
-                        data-type: INTEGER
-                        mandatory: 'true'
-                    -   name: cidr
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: area
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: subnet-cidr
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: subnet-area
-                        data-type: STRING
-                        mandatory: 'true'
-                -   name: delete-corporation
-                    parameter:
-                    -   name: domain-name
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: cidr
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: area
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: subnet-cidr
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: subnet-area
-                        data-type: STRING
-                        mandatory: 'true'
-                -   name: connect-domains
-                    parameter:
-                    -   name: domain-name
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: iface-name
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: tunnel-name
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: local-ip
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: remote-ip
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: tunnel-key
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: internal-local-ip
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: internal-remote-ip
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: tunnel-type
-                        data-type: STRING
-                        mandatory: 'false'
-                        default-value: 'gre'
-                -   name: delete-domain-connection
-                    parameter:
-                    -   name: domain-name
-                        data-type: STRING
-                        mandatory: 'true'
-                    -   name: tunnel-name
-                        data-type: STRING
-                        mandatory: 'true'
-                juju:
-                    charm: vpe-router
+        vnf-configuration:
+            config-attributes:
+                config-delay: '0'
+                config-priority: '0'
+            config-primitive:
+            -   name: configure-interface
+                parameter:
+                -   name: iface-name
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: cidr
+                    data-type: STRING
+            -   name: add-corporation
+                parameter:
+                -   name: domain-name
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: iface-name
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: vlan-id
+                    data-type: INTEGER
+                    mandatory: 'true'
+                -   name: cidr
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: area
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: subnet-cidr
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: subnet-area
+                    data-type: STRING
+                    mandatory: 'true'
+            -   name: delete-corporation
+                parameter:
+                -   name: domain-name
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: cidr
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: area
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: subnet-cidr
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: subnet-area
+                    data-type: STRING
+                    mandatory: 'true'
+            -   name: connect-domains
+                parameter:
+                -   name: domain-name
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: iface-name
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: tunnel-name
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: local-ip
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: remote-ip
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: tunnel-key
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: internal-local-ip
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: internal-remote-ip
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: tunnel-type
+                    data-type: STRING
+                    mandatory: 'false'
+                    default-value: 'gre'
+            -   name: delete-domain-connection
+                parameter:
+                -   name: domain-name
+                    data-type: STRING
+                    mandatory: 'true'
+                -   name: tunnel-name
+                    data-type: STRING
+                    mandatory: 'true'
+            juju:
+                charm: vpe-router
         connection-point:
         -   name: eth0
             type: VPORT

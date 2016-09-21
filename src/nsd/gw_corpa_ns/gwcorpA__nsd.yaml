@@ -13,6 +13,7 @@ nsd:nsd-catalog:
         vld:
         -   id: connection_0
             name: connection_0
+            short-name: connection_0
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -23,6 +24,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: gw_corpA_PE1
         -   id: connection_1
             name: connection_1
+            short-name: connection_1
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -33,6 +35,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: gw_corpA_PE2
         -   id: connection_2
             name: connection_2
+            short-name: connection_2
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -43,6 +46,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: gw_corpA_PE1
         -   id: connection_3
             name: connection_3
+            short-name: connection_3
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -53,6 +57,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: gw_corpA_PE2
         -   id: connection_4
             name: connection_4
+            short-name: connection_4
             type: ELAN
             provider-network:
                 overlay-type: VLAN
@@ -64,6 +69,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: gw_corpA_PE1
         -   id: connection_5
             name: connection_5
+            short-name: connection_5
             type: ELAN
             provider-network:
                 overlay-type: VLAN
