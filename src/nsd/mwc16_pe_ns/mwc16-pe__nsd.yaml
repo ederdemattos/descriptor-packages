@@ -95,7 +95,7 @@ nsd:nsd-catalog:
             -   member-vnf-index-ref: '2'
                 vnfd-connection-point-ref: xe0
                 vnfd-id-ref: 6WindTR1.1.2
-        config-primitive:
+        service-primitive:
         -   name: Add SP Test Corporation
             parameter:
             -   name: Corporation Name
