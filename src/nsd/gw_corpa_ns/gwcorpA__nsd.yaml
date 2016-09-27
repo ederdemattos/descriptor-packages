@@ -14,10 +14,10 @@ nsd:nsd-catalog:
         -   id: connection_0
             name: connection_0
             short-name: connection_0
+            vim-network-name: mgmt
             type: ELAN
             provider-network:
                 overlay-type: VLAN
-                physical-network: mgmt
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '1'
                 vnfd-connection-point-ref: eth1
@@ -26,9 +26,9 @@ nsd:nsd-catalog:
             name: connection_1
             short-name: connection_1
             type: ELAN
+            vim-network-name: mgmt
             provider-network:
                 overlay-type: VLAN
-                physical-network: mgmt
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '2'
                 vnfd-connection-point-ref: eth1
@@ -37,9 +37,9 @@ nsd:nsd-catalog:
             name: connection_2
             short-name: connection_2
             type: ELAN
+            vim-network-name: mwc1
             provider-network:
                 overlay-type: VLAN
-                physical-network: mwc1
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '1'
                 vnfd-connection-point-ref: eth0
@@ -48,9 +48,9 @@ nsd:nsd-catalog:
             name: connection_3
             short-name: connection_3
             type: ELAN
+            vim-network-name: mwc2
             provider-network:
                 overlay-type: VLAN
-                physical-network: mwc2
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '2'
                 vnfd-connection-point-ref: eth0
@@ -59,9 +59,9 @@ nsd:nsd-catalog:
             name: connection_4
             short-name: connection_4
             type: ELAN
+            vim-network-name: mwc16data1
             provider-network:
                 overlay-type: VLAN
-                physical-network: mwc16data1
                 segmentation_id: '101'
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '1'
@@ -71,9 +71,9 @@ nsd:nsd-catalog:
             name: connection_5
             short-name: connection_5
             type: ELAN
+            vim-network-name: mwc16data2
             provider-network:
                 overlay-type: VLAN
-                physical-network: mwc16data2
                 segmentation_id: '102'
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '2'

@@ -17,20 +17,20 @@ nsd:nsd-catalog:
             name: 6WindTR1.1.2__3 to OpenStack
             short-name: 6WindTR1.1.2__3 to OpenStack
             type: ELAN
+            vim-network-name: interDC
             provider-network:
                 overlay-type: VLAN
-                physical-network: interDC
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '3'
                 vnfd-connection-point-ref: xe3
                 vnfd-id-ref: 6WindTR1.1.2
         -   id: 6WindTR1.1.2__1 enty point
             name: 6WindTR1.1.2__1 enty point
-            short-name: 6WindTR1.1.2__1 enty point
+            short-name: 6WindTR1.1.2__1 entry point
             type: ELAN
+            vim-network-name: mwc16data1
             provider-network:
                 overlay-type: VLAN
-                physical-network: mwc16data1
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '1'
                 vnfd-connection-point-ref: xe2
@@ -39,9 +39,9 @@ nsd:nsd-catalog:
             name: 6WindTR1.1.2__2 entry point
             short-name: 6WindTR1.1.2__2 entry point
             type: ELAN
+            vim-network-name: mwc16data2
             provider-network:
                 overlay-type: VLAN
-                physical-network: mwc16data2
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '2'
                 vnfd-connection-point-ref: xe2
@@ -49,9 +49,9 @@ nsd:nsd-catalog:
         -   id: management
             name: management
             short-name: management
+            vim-network-name: mgmt
             provider-network:
                 overlay-type: VLAN
-                physical-network: mgmt
             type: ELAN
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '1'
@@ -76,6 +76,7 @@ nsd:nsd-catalog:
                 vnfd-id-ref: 6WindTR1.1.2
         -   id: 6WindTR1.1.2__1-6WindTR1.1.2__3
             name: 6WindTR1.1.2__1-6WindTR1.1.2__3
+            short-name: 6WindTR1.1.2__1-6WindTR1.1.2__3
             type: ELAN
             vnfd-connection-point-ref:
             -   member-vnf-index-ref: '1'
