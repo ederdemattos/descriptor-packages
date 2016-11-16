@@ -1,0 +1,103 @@
+#
+#   Copyright 2016 Keynetic Technologies
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+#
+#
+nsd:nsd-catalog:
+    nsd:nsd:
+    -   nsd:vendor: Keynetic Technologies
+        nsd:version: '0.2'
+        nsd:description: Flow-based Network Access Control
+        nsd:id: flownac
+        nsd:name: Keynetic-FlowNAC
+        nsd:short-name: KNT-FNAC
+        nsd:logo: flownac.png
+        nsd:meta: "{\"containerPositionMap\":{\"1\":{\"top\":180,\"left\":330,\"right\":580,\"bottom\":235,\"width\":250,\"height\":55},\"2\":{\"top\":405,\"left\":330,\"right\":580,\"bottom\":460,\"width\":250,\"height\":55},\"flownac\":{\"top\":30,\"left\":135,\"right\":385,\"bottom\":85,\"width\":250,\"height\":55},\"mgmt\":{\"top\":300,\"left\":825,\"right\":1075,\"bottom\":338,\"width\":250,\"height\":38},\"user\":{\"top\":540,\"left\":60,\"right\":310,\"bottom\":578,\"width\":250,\"height\":38},\"data\":{\"top\":540,\"left\":585,\"right\":835,\"bottom\":578,\"width\":250,\"height\":38},\"auth\":{\"top\":300,\"left\":195,\"right\":445,\"bottom\":338,\"width\":250,\"height\":38},\"ctrl\":{\"top\":300,\"left\":495,\"right\":745,\"bottom\":338,\"width\":250,\"height\":38}}}"
+        nsd:constituent-vnfd:
+        -   nsd:member-vnf-index: '1'
+            nsd:start-by-default: 'true'
+            nsd:vnfd-id-ref: fnc0.1
+        -   nsd:member-vnf-index: '2'
+            nsd:start-by-default: 'true'
+            nsd:vnfd-id-ref: fne0.1
+        nsd:vld:
+        -   nsd:description: Management Link
+            nsd:id: mgmt
+            nsd:name: mgmt
+            nsd:short-name: Management
+            nsd:type: ELAN
+            nsd:vim-network-name: mgmt-net
+            nsd:provider-network:
+                nsd:overlay-type: VLAN
+            nsd:vnfd-connection-point-ref:
+            -   nsd:member-vnf-index-ref: '1'
+                nsd:vnfd-connection-point-ref: mgmt
+                nsd:vnfd-id-ref: fnc0.1
+            -   nsd:member-vnf-index-ref: '2'
+                nsd:vnfd-connection-point-ref: mgmt
+                nsd:vnfd-id-ref: fne0.1
+        -   nsd:description: User Link
+            nsd:id: user
+            nsd:name: user
+            nsd:short-name: User
+            nsd:type: ELAN
+            nsd:vim-network-name: user-net
+            nsd:provider-network:
+                nsd:overlay-type: VLAN
+            nsd:vnfd-connection-point-ref:
+            -   nsd:member-vnf-index-ref: '2'
+                nsd:vnfd-connection-point-ref: user
+                nsd:vnfd-id-ref: fne0.1
+        -   nsd:description: Service Link
+            nsd:id: data
+            nsd:name: service
+            nsd:short-name: Service
+            nsd:type: ELAN
+            nsd:vim-network-name: data-net
+            nsd:provider-network:
+                nsd:overlay-type: VLAN
+            nsd:vnfd-connection-point-ref:
+            -   nsd:member-vnf-index-ref: '2'
+                nsd:vnfd-connection-point-ref: data
+                nsd:vnfd-id-ref: fne0.1
+        -   nsd:description: Auth Link
+            nsd:id: auth
+            nsd:name: auth
+            nsd:short-name: Auth
+            nsd:type: ELAN
+            nsd:vim-network-name: auth-net
+            nsd:provider-network:
+                nsd:overlay-type: VLAN
+            nsd:vnfd-connection-point-ref:
+            -   nsd:member-vnf-index-ref: '1'
+                nsd:vnfd-connection-point-ref: auth
+                nsd:vnfd-id-ref: fnc0.1
+            -   nsd:member-vnf-index-ref: '2'
+                nsd:vnfd-connection-point-ref: auth
+                nsd:vnfd-id-ref: fne0.1
+        -   nsd:description: Control Link
+            nsd:id: ctrl
+            nsd:name: ctrl
+            nsd:short-name: Control
+            nsd:type: ELAN
+            nsd:vim-network-name: ctrl-net
+            nsd:provider-network:
+                nsd:overlay-type: VLAN
+            nsd:vnfd-connection-point-ref:
+            -   nsd:member-vnf-index-ref: '1'
+                nsd:vnfd-connection-point-ref: ctrl
+                nsd:vnfd-id-ref: fnc0.1
+            -   nsd:member-vnf-index-ref: '2'
+                nsd:vnfd-connection-point-ref: ctrl
+                nsd:vnfd-id-ref: fne0.1
