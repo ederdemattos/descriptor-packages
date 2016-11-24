@@ -74,13 +74,20 @@ vnfd:vnfd-catalog:
                     node-cnt: '1'
             host-epa:
                 om-cpu-feature:
-                - 64b
-                - iommu
-                - lps
-                - tlbps
-                - hwsv
-                - dioc
-                - ht
+                - 
+                  feature: 64b
+                - 
+                  feature: iommu
+                - 
+                  feature: lps
+                - 
+                  feature: tlbps
+                - 
+                  feature: hwsv
+                - 
+                  feature: dioc
+                - 
+                  feature: ht
                 om-cpu-model-string: Intel(R) Xeon(R) CPU E5-4620 0 @ 2.20GHz
             hypervisor-epa:
                 type: REQUIRE_KVM
