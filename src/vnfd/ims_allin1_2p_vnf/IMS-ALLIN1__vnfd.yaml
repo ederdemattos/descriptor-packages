@@ -10,8 +10,12 @@ vnfd:vnfd-catalog:
         vnf-configuration:
             config-attributes:
                 config-delay: '0'
-                config-priority: '1'
-            service-primitive:
+            vnfap:
+                capability:
+                -   vnfd:attribute: ../../../../mgmt-interface, ip-address
+                    vnfd:description: Management address
+                    vnfd:name: proxied_ip
+            config-primitive:
             -   name: config
                 parameter:
                 -   name: home_domain
@@ -22,6 +26,8 @@ vnfd:vnfd-catalog:
                     data-type: string
                     mandatory: 'true'
                     default-value: cw-aio
+                -   name: proxied_ip
+                    hidden: 'true'
             -   name: create-update-user
                 parameter:
                 -   name: number
@@ -36,10 +42,7 @@ vnfd:vnfd-catalog:
                     data-type: STRING
                     mandatory: 'true'
             initial-config-primitive:
-            -   name: config
-                parameter:
-                -   name: proxied_ip
-                    value: <rw_mgmt_ip>
+            -   config-primitive-ref: config
                 seq: '1'
             juju:
                 charm: clearwater-aio-proxy
