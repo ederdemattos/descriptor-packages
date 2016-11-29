@@ -26,7 +26,7 @@ vnfd:vnfd-catalog:
             config-attributes:
                 config-delay: '0'
                 config-priority: '0'
-            service-primitive:
+            config-primitive:
             -   name: configure-interface
                 parameter:
                 -   name: iface-name

@@ -11,7 +11,7 @@ vnfd:vnfd-catalog:
             config-attributes:
                 config-delay: '0'
                 config-priority: '1'
-            service-primitive:
+            config-primitive:
             -   name: config
                 parameter:
                 -   name: user
