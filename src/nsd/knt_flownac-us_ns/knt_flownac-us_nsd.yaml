@@ -19,9 +19,9 @@ nsd:nsd-catalog:
     -   nsd:vendor: Keynetic Technologies
         nsd:version: '0.3'
         nsd:description: Flow-based Network Access Control
-        nsd:id: flownac
-        nsd:name: Keynetic-FlowNAC
-        nsd:short-name: KNT-FNAC
+        nsd:id: flownac-us
+        nsd:name: Keynetic-FlowNAC-US
+        nsd:short-name: KNT-FNAC-US
         nsd:logo: flownac.png
         nsd:meta: "{\"containerPositionMap\":{\"1\":{\"top\":180,\"left\":330,\"right\":580,\"bottom\":235,\"width\":250,\"height\":55},\"2\":{\"top\":405,\"left\":330,\"right\":580,\"bottom\":460,\"width\":250,\"height\":55},\"flownac\":{\"top\":30,\"left\":135,\"right\":385,\"bottom\":85,\"width\":250,\"height\":55},\"mgmt\":{\"top\":300,\"left\":825,\"right\":1075,\"bottom\":338,\"width\":250,\"height\":38},\"user\":{\"top\":540,\"left\":60,\"right\":310,\"bottom\":578,\"width\":250,\"height\":38},\"data\":{\"top\":540,\"left\":585,\"right\":835,\"bottom\":578,\"width\":250,\"height\":38},\"auth\":{\"top\":300,\"left\":195,\"right\":445,\"bottom\":338,\"width\":250,\"height\":38},\"ctrl\":{\"top\":300,\"left\":495,\"right\":745,\"bottom\":338,\"width\":250,\"height\":38}}}"
         nsd:constituent-vnfd:
@@ -31,6 +31,12 @@ nsd:nsd-catalog:
         -   nsd:member-vnf-index: '2'
             nsd:start-by-default: 'true'
             nsd:vnfd-id-ref: fne
+        -   nsd:member-vnf-index: '3'
+            nsd:start-by-default: 'true'
+            nsd:vnfd-id-ref: fnu
+        -   nsd:member-vnf-index: '4'
+            nsd:start-by-default: 'true'
+            nsd:vnfd-id-ref: fnd
         nsd:vld:
         -   nsd:description: Management Link
             nsd:id: mgmt
@@ -47,6 +53,12 @@ nsd:nsd-catalog:
             -   nsd:member-vnf-index-ref: '2'
                 nsd:vnfd-connection-point-ref: mgmt
                 nsd:vnfd-id-ref: fne
+            -   nsd:member-vnf-index-ref: '3'
+                nsd:vnfd-connection-point-ref: mgmt
+                nsd:vnfd-id-ref: fnu
+            -   nsd:member-vnf-index-ref: '4'
+                nsd:vnfd-connection-point-ref: mgmt
+                nsd:vnfd-id-ref: fnd
         -   nsd:description: User Link
             nsd:id: user
             nsd:name: user
@@ -59,6 +71,9 @@ nsd:nsd-catalog:
             -   nsd:member-vnf-index-ref: '2'
                 nsd:vnfd-connection-point-ref: user
                 nsd:vnfd-id-ref: fne
+            -   nsd:member-vnf-index-ref: '3'
+                nsd:vnfd-connection-point-ref: user
+                nsd:vnfd-id-ref: fnu
         -   nsd:description: Service Link
             nsd:id: data
             nsd:name: service
@@ -71,6 +86,9 @@ nsd:nsd-catalog:
             -   nsd:member-vnf-index-ref: '2'
                 nsd:vnfd-connection-point-ref: data
                 nsd:vnfd-id-ref: fne
+            -   nsd:member-vnf-index-ref: '4'
+                nsd:vnfd-connection-point-ref: data
+                nsd:vnfd-id-ref: fnd
         -   nsd:description: Auth Link
             nsd:id: auth
             nsd:name: auth

@@ -17,9 +17,9 @@
 vnfd:vnfd-catalog:
     vnfd:vnfd:
     -   vnfd:vendor: Keynetic Technologies
-        vnfd:version: '0.2'
+        vnfd:version: '0.3'
         vnfd:description: FlowNAC Control
-        vnfd:id: fnc0.1
+        vnfd:id: fnc
         vnfd:name: Keynetic-FNC
         vnfd:short-name: KNT-FNC
         vnfd:logo: flownac.png

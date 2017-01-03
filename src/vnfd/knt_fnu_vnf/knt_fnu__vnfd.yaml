@@ -18,11 +18,11 @@ vnfd:vnfd-catalog:
     vnfd:vnfd:
     -   vnfd:vendor: Keynetic Technologies
         vnfd:version: '0.3'
-        vnfd:description: FlowNAC Enforcement
-        vnfd:id: fne
-        vnfd:name: Keynetic-FNE
-        vnfd:short-name: KNT-FNE
-        vnfd:logo: flownac.png
+        vnfd:description: Keynetic User
+        vnfd:id: fnu
+        vnfd:name: Keynetic-FNU
+        vnfd:short-name: KNT-FNU
+        vnfd:logo: keynetic.png
         vnfd:service-function-chain: UNAWARE
         vnfd:connection-point:
         -   vnfd:id: mgmt
@@ -31,17 +31,8 @@ vnfd:vnfd-catalog:
         -   vnfd:id: user
             vnfd:name: user
             vnfd:type: VPORT
-        -   vnfd:id: data
-            vnfd:name: data
-            vnfd:type: VPORT
-        -   vnfd:id: auth
-            vnfd:name: auth
-            vnfd:type: VPORT
-        -   vnfd:id: ctrl
-            vnfd:name: ctrl
-            vnfd:type: VPORT
         vnfd:vdu:
-        -   vnfd:description: FNE VDU
+        -   vnfd:description: FNU VDU
             vnfd:external-interface:
             -   vnfd:name: eth0
                 vnfd:virtual-interface:
@@ -51,23 +42,11 @@ vnfd:vnfd-catalog:
                 vnfd:virtual-interface:
                     vnfd:type: VIRTIO
                 vnfd:vnfd-connection-point-ref: user
-            -   vnfd:name: data
-                vnfd:virtual-interface:
-                    vnfd:type: VIRTIO
-                vnfd:vnfd-connection-point-ref: data
-            -   vnfd:name: auth
-                vnfd:virtual-interface:
-                    vnfd:type: VIRTIO
-                vnfd:vnfd-connection-point-ref: auth
-            -   vnfd:name: ctrl
-                vnfd:virtual-interface:
-                    vnfd:type: VIRTIO
-                vnfd:vnfd-connection-point-ref: ctrl
             vnfd:guest-epa:
                 vnfd:cpu-pinning-policy: ANY
-            vnfd:id: fne-vdu
-            vnfd:image: /var/lib/libvirt/images/fne.img
-            vnfd:name: fne-vdu
+            vnfd:id: fnu-vdu
+            vnfd:image: /var/lib/libvirt/images/fnu.img
+            vnfd:name: fnu-vdu
             vnfd:vm-flavor:
                 vnfd:memory-mb: '1024'
                 vnfd:storage-gb: '4'
