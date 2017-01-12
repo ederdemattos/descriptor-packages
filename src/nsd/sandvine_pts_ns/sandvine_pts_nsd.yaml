@@ -1,0 +1,37 @@
+nsd:nsd-catalog:
+    nsd:nsd:
+    -   nsd:id: sandvine_pts_ns
+        nsd:name: pts_ns
+        nsd:short-name: pts_ns
+        nsd:description: Sandvine PTS Network Service
+        nsd:vendor: Sandvine
+        nsd:version: '1.0'
+        nsd:logo: sandvine_logo.png
+        nsd:constituent-vnfd:
+        -   nsd:member-vnf-index: '1'
+            nsd:vnfd-id-ref: id_pts_vnf
+        nsd:vld:
+        -   nsd:id: mgmt-connection-id
+            nsd:name: mgmt connection
+            nsd:vnfd-connection-point-ref:
+            -   nsd:member-vnf-index-ref: '1'
+                nsd:vnfd-connection-point-ref: mgmt0
+                nsd:vnfd-id-ref: id_pts_vnf
+        -   nsd:id: sub-connection-id
+            nsd:name: subscriber connection
+            nsd:vnfd-connection-point-ref:
+            -   nsd:member-vnf-index-ref: '1'
+                nsd:vnfd-connection-point-ref: subscriber-cp
+                nsd:vnfd-id-ref: id_pts_vnf
+        -   nsd:id: int-connection-id
+            nsd:name: internet connection
+            nsd:vnfd-connection-point-ref:
+            -   nsd:member-vnf-index-ref: '1'
+                nsd:vnfd-connection-point-ref: internet-cp
+                nsd:vnfd-id-ref: id_pts_vnf
+        -   nsd:id: service-connection-id 
+            nsd:name: service connection
+            nsd:vnfd-connection-point-ref:
+            -   nsd:member-vnf-index-ref: '1'
+                nsd:vnfd-connection-point-ref: service-cp
+                nsd:vnfd-id-ref: id_pts_vnf

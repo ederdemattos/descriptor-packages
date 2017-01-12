@@ -1,0 +1,48 @@
+vnfd:vnfd-catalog:
+    vnfd:vnfd:
+    -   vnfd:connection-point:
+        -   vnfd:name: mgmt0
+            vnfd:type: VPORT
+        -   vnfd:name: subscriber-cp
+            vnfd:type: VPORT
+        -   vnfd:name: internet-cp
+            vnfd:type: VPORT
+        -   vnfd:name: service-cp
+            vnfd:type: VPORT
+        vnfd:description: Sandvine Policy Traffic Switch
+        vnfd:id: id_pts_vnf
+        vnfd:logo: sandvine_logo.png
+        vnfd:mgmt-interface:
+          vnfd:vdu-id: iovdu_0
+        vnfd:name: Policy Traffic Switch
+        vnfd:service-function-chain: UNAWARE
+        vnfd:short-name: pts
+        vnfd:vdu:
+        -   vnfd:external-interface:
+            -   vnfd:name: mgmt0
+                vnfd:virtual-interface:
+                    vnfd:type: OM-MGMT
+                vnfd:vnfd-connection-point-ref: mgmt0
+            -   vnfd:name: subscriber-cp
+                vnfd:virtual-interface:
+                    vnfd:type: VIRTIO
+                vnfd:vnfd-connection-point-ref: subscriber-cp
+            -   vnfd:name: internet-cp
+                vnfd:virtual-interface:
+                    vnfd:type: VIRTIO
+                vnfd:vnfd-connection-point-ref: internet-cp
+            -   vnfd:name: service-cp
+                vnfd:virtual-interface:
+                    vnfd:type: VIRTIO
+                vnfd:vnfd-connection-point-ref: service-cp
+            vnfd:id: iovdu_0
+            vnfd:guest-epa:
+                vnfd:cpu-pinning-policy: ANY
+            vnfd:image: PTS_7.40.00-0309_x86_64_el7
+            vnfd:image-checksum: 70d8007f31f5f93f79bcc78b03b5cf28
+            vnfd:name: vdu-1
+            vnfd:vm-flavor:
+                vnfd:memory-mb: '5120'
+                vnfd:storage-gb: '5'
+                vnfd:vcpu-count: '3'
+        vnfd:version: '1.0'
