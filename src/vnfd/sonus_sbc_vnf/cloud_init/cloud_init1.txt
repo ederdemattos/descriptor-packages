@@ -1,0 +1,16 @@
+#cloud-config
+write_files:
+-   content: |
+        {
+          "CERole"                   : "ACTIVE",
+          "CEName"                   : "sbc01",
+          "SystemName"               : "vsbcSystem",
+          "SbcPersonalityType"       : "isbc",
+          "EmsUsername"              : "restuser",
+          "EmsPassword"              : "sonus123",
+          "EmsIP"                    : "10.0.217.14",
+          "EmsDownloadConfig"        : "False",
+          "EmsPrivateNodeParameters" : { "cluster_id": "cluster01", "vnfc_id":"cluster01" }
+        }
+    path: /opt/sonus/userData.json
+

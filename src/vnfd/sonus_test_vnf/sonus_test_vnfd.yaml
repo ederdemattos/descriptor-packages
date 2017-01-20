@@ -1,0 +1,34 @@
+vnfd:vnfd-catalog:
+    vnfd:vnfd:
+    -   vnfd:description: This is a Sonus Test VNF
+        vnfd:id: Sonustest_vnfd
+        vnfd:mgmt-interface:
+            vnfd:vdu-id: iovdu_0
+        vnfd:name: Sonustest_vnfd
+        vnfd:short-name: Sonustest_vnfd
+        vnfd:connection-point: 
+        -   vnfd:name: "mgmt"
+            vnfd:type: "VPORT"
+        -   vnfd:name: "pkt0"
+            vnfd:type: "VPORT"
+        vnfd:vdu:
+            vnfd:count: '1'
+            vnfd:id: iovdu_0
+            vnfd:name: iovdu_0
+            vnfd:image: VMSipp-RR-Master.qcow2
+            vnfd:vm-flavor:
+                vnfd:memory-mb: '4096'
+                vnfd:storage-gb: '20'
+                vnfd:vcpu-count: '2'
+            vnfd:external-interface: 
+            -   vnfd:name: "mgmt"
+                vnfd:vnfd-connection-point-ref: "mgmt"
+                vnfd:virtual-interface: 
+                    vnfd:type: "OM_MGMT"
+            -   vnfd:name: "pkt0"
+                vnfd:vnfd-connection-point-ref: "pkt0"
+                vnfd:virtual-interface: 
+                    vnfd:type: "VIRTIO"
+        vnfd:vendor: Sonus
+        vnfd:version: '1.0'
+
