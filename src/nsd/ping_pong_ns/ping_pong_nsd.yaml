@@ -24,16 +24,20 @@ nsd:nsd-catalog:
         nsd:config-parameter-map:
         -   nsd:config-parameter-request:
                 nsd:config-parameter-request-ref: pong_ip
+                nsd:vnfd-id-ref: rift_ping_vnf
                 nsd:member-vnf-index-ref: '1'
             nsd:config-parameter-source:
                 nsd:config-parameter-source-ref: service_ip
+                nsd:vnfd-id-ref: rift_pong_vnf
                 nsd:member-vnf-index-ref: '2'
             nsd:id: '1'
         -   nsd:config-parameter-request:
                 nsd:config-parameter-request-ref: pong_port
+                nsd:vnfd-id-ref: rift_ping_vnf
                 nsd:member-vnf-index-ref: '1'
             nsd:config-parameter-source:
                 nsd:config-parameter-source-ref: service_port
+                nsd:vnfd-id-ref: rift_pong_vnf
                 nsd:member-vnf-index-ref: '2'
             nsd:id: '2'
         nsd:constituent-vnfd:
