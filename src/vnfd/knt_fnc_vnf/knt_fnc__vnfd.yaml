@@ -15,87 +15,46 @@
 #
 #
 vnfd:vnfd-catalog:
-    vnfd:
-    -   vendor: Keynetic Technologies
-        version: '0.3'
-        description: FlowNAC Control
-        id: fnc
-        name: Keynetic-FNC
-        short-name: KNT-FNC
-        logo: flownac.png
-        service-function-chain: UNAWARE
-        vnf-configuration:
-            config-attributes:
-                config-delay: 10
-            service-primitive:
-            -   name: config
-                parameter:
-                -   name: ssh-hostname
-                    data-type: STRING
-                    mandatory: 'true'
-                    default-value: <rw_mgmt_ip>
-                -   name: ssh-username
-                    data-type: STRING
-                    mandatory: 'true'
-                    default-value: flownac
-                -   name: ssh-password
-                    data-type: STRING
-                    mandatory: 'true'
-                    default-value: fnac@osm
-                -   name: mode
-                    data-type: STRING
-                    read-only: 'true'
-                    default-value: fnc
-            -   name: start
-            -   name: stop
-            -   name: restart
-            initial-config-primitive:
-            -   name: config
-                parameter:
-                -   name: ssh-hostname
-                    value: <rw_mgmt_ip>
-                -   name: ssh-username
-                    value: flownac
-                -   name: ssh-password
-                    value: fnac@osm
-                -   name: mode
-                    value: fnc
-                seq: '1'
-            -   name: start
-                seq: '2'
-            juju:
-                charm: flownac
-        connection-point:
-        -   id: mgmt
-            name: mgmt
-            type: VPORT
-        -   id: auth
-            name: auth
-            type: VPORT
-        -   id: ctrl
-            name: ctrl
-            type: VPORT
-        vdu:
-        -   description: FNC VDU
-            external-interface:
-            -   name: eth0
-                virtual-interface:
-                    type: OM-MGMT
-                vnfd-connection-point-ref: mgmt
-            -   name: auth
-                virtual-interface:
-                    type: VIRTIO
-                vnfd-connection-point-ref: auth
-            -   name: ctrl
-                virtual-interface:
-                    type: VIRTIO
-                vnfd-connection-point-ref: ctrl
-            guest-epa:
-                cpu-pinning-policy: ANY
-            id: fnc-vdu
-            image: /var/lib/libvirt/images/fnc.qcow2
-            name: fnc-vdu
-            vm-flavor:
-                memory-mb: '1024'
-                storage-gb: '4'
-                vcpu-count: '1'
+    vnfd:vnfd:
+    -   vnfd:vendor: Keynetic Technologies
+        vnfd:version: '0.3'
+        vnfd:description: FlowNAC Control
+        vnfd:id: fnc
+        vnfd:name: Keynetic-FNC
+        vnfd:short-name: KNT-FNC
+        vnfd:logo: flownac.png
+        vnfd:service-function-chain: UNAWARE
+        vnfd:connection-point:
+        -   vnfd:id: mgmt
+            vnfd:name: mgmt
+            vnfd:type: VPORT
+        -   vnfd:id: auth
+            vnfd:name: auth
+            vnfd:type: VPORT
+        -   vnfd:id: ctrl
+            vnfd:name: ctrl
+            vnfd:type: VPORT
+        vnfd:vdu:
+        -   vnfd:description: FNC VDU
+            vnfd:external-interface:
+            -   vnfd:name: eth0
+                vnfd:virtual-interface:
+                    vnfd:type: OM-MGMT
+                vnfd:vnfd-connection-point-ref: mgmt
+            -   vnfd:name: auth
+                vnfd:virtual-interface:
+                    vnfd:type: VIRTIO
+                vnfd:vnfd-connection-point-ref: auth
+            -   vnfd:name: ctrl
+                vnfd:virtual-interface:
+                    vnfd:type: VIRTIO
+                vnfd:vnfd-connection-point-ref: ctrl
+            vnfd:guest-epa:
+                vnfd:cpu-pinning-policy: ANY
+            vnfd:id: fnc-vdu
+            vnfd:image: /var/lib/libvirt/images/fnc.img
+            vnfd:name: fnc-vdu
+            vnfd:vm-flavor:
+                vnfd:memory-mb: '1024'
+                vnfd:storage-gb: '4'
+                vnfd:vcpu-count: '1'

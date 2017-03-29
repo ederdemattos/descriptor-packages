@@ -15,101 +15,60 @@
 #
 #
 vnfd:vnfd-catalog:
-    vnfd:
-    -   vendor: Keynetic Technologies
-        version: '0.3'
-        description: FlowNAC Enforcement
-        id: fne
-        name: Keynetic-FNE
-        short-name: KNT-FNE
-        logo: flownac.png
-        service-function-chain: UNAWARE
-        vnf-configuration:
-            config-attributes:
-                config-delay: 10
-            service-primitive:
-            -   name: config
-                parameter:
-                -   name: ssh-hostname
-                    data-type: STRING
-                    mandatory: 'true'
-                    default-value: <rw_mgmt_ip>
-                -   name: ssh-username
-                    data-type: STRING
-                    mandatory: 'true'
-                    default-value: flownac
-                -   name: ssh-password
-                    data-type: STRING
-                    mandatory: 'true'
-                    default-value: fnac@osm
-                -   name: mode
-                    data-type: STRING
-                    read-only: 'true'
-                    default-value: fne
-            -   name: start
-            -   name: stop
-            -   name: restart
-            initial-config-primitive:
-            -   name: config
-                parameter:
-                -   name: ssh-hostname
-                    value: <rw_mgmt_ip>
-                -   name: ssh-username
-                    value: flownac
-                -   name: ssh-password
-                    value: fnac@osm
-                -   name: mode
-                    value: fne
-                seq: '1'
-            -   name: start
-                seq: '2'
-            juju:
-                charm: flownac
-        connection-point:
-        -   id: mgmt
-            name: mgmt
-            type: VPORT
-        -   id: user
-            name: user
-            type: VPORT
-        -   id: data
-            name: data
-            type: VPORT
-        -   id: auth
-            name: auth
-            type: VPORT
-        -   id: ctrl
-            name: ctrl
-            type: VPORT
-        vdu:
-        -   description: FNE VDU
-            external-interface:
-            -   name: eth0
-                virtual-interface:
-                    type: OM-MGMT
-                vnfd-connection-point-ref: mgmt
-            -   name: user
-                virtual-interface:
-                    type: VIRTIO
-                vnfd-connection-point-ref: user
-            -   name: data
-                virtual-interface:
-                    type: VIRTIO
-                vnfd-connection-point-ref: data
-            -   name: auth
-                virtual-interface:
-                    type: VIRTIO
-                vnfd-connection-point-ref: auth
-            -   name: ctrl
-                virtual-interface:
-                    type: VIRTIO
-                vnfd-connection-point-ref: ctrl
-            guest-epa:
-                cpu-pinning-policy: ANY
-            id: fne-vdu
-            image: /var/lib/libvirt/images/fne.qcow2
-            name: fne-vdu
-            vm-flavor:
-                memory-mb: '1024'
-                storage-gb: '4'
-                vcpu-count: '1'
+    vnfd:vnfd:
+    -   vnfd:vendor: Keynetic Technologies
+        vnfd:version: '0.3'
+        vnfd:description: FlowNAC Enforcement
+        vnfd:id: fne
+        vnfd:name: Keynetic-FNE
+        vnfd:short-name: KNT-FNE
+        vnfd:logo: flownac.png
+        vnfd:service-function-chain: UNAWARE
+        vnfd:connection-point:
+        -   vnfd:id: mgmt
+            vnfd:name: mgmt
+            vnfd:type: VPORT
+        -   vnfd:id: user
+            vnfd:name: user
+            vnfd:type: VPORT
+        -   vnfd:id: data
+            vnfd:name: data
+            vnfd:type: VPORT
+        -   vnfd:id: auth
+            vnfd:name: auth
+            vnfd:type: VPORT
+        -   vnfd:id: ctrl
+            vnfd:name: ctrl
+            vnfd:type: VPORT
+        vnfd:vdu:
+        -   vnfd:description: FNE VDU
+            vnfd:external-interface:
+            -   vnfd:name: eth0
+                vnfd:virtual-interface:
+                    vnfd:type: OM-MGMT
+                vnfd:vnfd-connection-point-ref: mgmt
+            -   vnfd:name: user
+                vnfd:virtual-interface:
+                    vnfd:type: VIRTIO
+                vnfd:vnfd-connection-point-ref: user
+            -   vnfd:name: data
+                vnfd:virtual-interface:
+                    vnfd:type: VIRTIO
+                vnfd:vnfd-connection-point-ref: data
+            -   vnfd:name: auth
+                vnfd:virtual-interface:
+                    vnfd:type: VIRTIO
+                vnfd:vnfd-connection-point-ref: auth
+            -   vnfd:name: ctrl
+                vnfd:virtual-interface:
+                    vnfd:type: VIRTIO
+                vnfd:vnfd-connection-point-ref: ctrl
+            vnfd:guest-epa:
+                vnfd:cpu-pinning-policy: ANY
+            vnfd:id: fne-vdu
+            vnfd:image: /var/lib/libvirt/images/fne.img
+            vnfd:name: fne-vdu
+            vnfd:vm-flavor:
+                vnfd:memory-mb: '1024'
+                vnfd:storage-gb: '4'
+                vnfd:vcpu-count: '1'
