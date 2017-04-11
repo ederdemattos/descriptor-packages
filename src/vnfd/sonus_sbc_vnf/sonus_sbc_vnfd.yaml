@@ -1,0 +1,47 @@
+vnfd:vnfd-catalog:
+    vnfd:vnfd:
+    -   vnfd:description: This is a Sonus SBC VNF
+        vnfd:id: Sonussbc_vnfd
+        vnfd:mgmt-interface:
+            vnfd:vdu-id: iovdu_0
+        vnfd:name: Sonussbc_vnfd
+        vnfd:short-name: Sonussbc_vnfd
+        vnfd:connection-point:
+        -   vnfd:name: "1mgmt"
+            vnfd:type: "VPORT"
+        -   vnfd:name: "2ha"
+            vnfd:type: "VPORT"
+        -   vnfd:name: "3pkt0"
+            vnfd:type: "VPORT"
+        -   vnfd:name: "4pkt1"
+            vnfd:type: "VPORT"
+        vnfd:vdu:
+            vnfd:count: '1'
+            vnfd:id: iovdu_0
+            vnfd:name: iovdu_0
+            vnfd:cloud-init-file: cloud_init1.txt
+            vnfd:image: sbc-V05.01.00A624-connexip-os_03.01.00-A624_amd64-cloud.qcow2
+            vnfd:vm-flavor:
+                vnfd:memory-mb: '10240'
+                vnfd:storage-gb: '80'
+                vnfd:vcpu-count: '4'
+            vnfd:external-interface:
+            -   vnfd:name: "1mgmt"
+                vnfd:vnfd-connection-point-ref: "1mgmt"
+                vnfd:virtual-interface:
+                    vnfd:type: "OM_MGMT"
+            -   vnfd:name: "2ha"
+                vnfd:vnfd-connection-point-ref: "2ha"
+                vnfd:virtual-interface:
+                    vnfd:type: "VIRTIO"
+            -   vnfd:name: "3pkt0"
+                vnfd:vnfd-connection-point-ref: "3pkt0"
+                vnfd:virtual-interface:
+                    vnfd:type: "VIRTIO"
+            -   vnfd:name: "4pkt1"
+                vnfd:vnfd-connection-point-ref: "4pkt1"
+                vnfd:virtual-interface:
+                    vnfd:type: "VIRTIO"
+        vnfd:vendor: Sonus
+        vnfd:version: '1.0'
+

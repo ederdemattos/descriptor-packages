@@ -1,0 +1,55 @@
+nsd:nsd-catalog:
+    nsd:nsd:
+        nsd:constituent-vnfd:
+        -   nsd:member-vnf-index: '1'
+            nsd:vnfd-id-ref: Sonussbc_vnfd
+        -   nsd:member-vnf-index: '2'
+            nsd:vnfd-id-ref: Sonustest_vnfd
+        nsd:description: Sonus SBC NS
+        nsd:id: Sonussbc_nsd
+        nsd:name: Sonussbc_nsd
+        nsd:short-name: Sonussbc_nsd
+        nsd:vendor: Sonus
+        nsd:version: '1.0'
+        nsd:vld: 
+        - 
+           id: "vld-mgmt"
+           name: "vld-mgmt"
+           vnfd-connection-point-ref: 
+           - 
+              member-vnf-index-ref: 1
+              vnfd-id-ref: Sonussbc_vnfd
+              vnfd-connection-point-ref: "1mgmt"
+           - 
+              member-vnf-index-ref: 2
+              vnfd-id-ref: Sonustest_vnfd
+              vnfd-connection-point-ref: "mgmt"
+        - 
+           id: "vld-1"
+           name: "vld-1"
+           vnfd-connection-point-ref: 
+           - 
+              member-vnf-index-ref: 1
+              vnfd-id-ref: Sonussbc_vnfd
+              vnfd-connection-point-ref: "2ha"
+        - 
+           id: "vld-2"
+           name: "vld-2"
+           vnfd-connection-point-ref: 
+           - 
+              member-vnf-index-ref: 1
+              vnfd-id-ref: Sonussbc_vnfd
+              vnfd-connection-point-ref: "3pkt0"
+           - 
+              member-vnf-index-ref: 2
+              vnfd-id-ref: Sonustest_vnfd
+              vnfd-connection-point-ref: "pkt0"
+        - 
+           id: "vld-3"
+           name: "vld-3"
+           vnfd-connection-point-ref: 
+           - 
+              member-vnf-index-ref: 1
+              vnfd-id-ref: Sonussbc_vnfd
+              vnfd-connection-point-ref: "4pkt1"
+
