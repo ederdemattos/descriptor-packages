@@ -30,33 +30,33 @@ vnfd:vnfd-catalog:
         vnfd:logo: sandvine_logo.png
         vnfd:mgmt-interface:
           vnfd:vdu-id: iovdu_0
-        vnfd:name: Policy Traffic Switch
+        vnfd:name: sandvine_pts
         vnfd:service-function-chain: UNAWARE
         vnfd:short-name: pts
         vnfd:vdu:
         -   vnfd:external-interface:
-            -   vnfd:name: mgmt0
+            -   vnfd:name: a-mgmt0
                 vnfd:virtual-interface:
                     vnfd:type: OM-MGMT
                 vnfd:vnfd-connection-point-ref: mgmt0
-            -   vnfd:name: subscriber-cp
+            -   vnfd:name: b-subscriber-cp
                 vnfd:virtual-interface:
                     vnfd:type: VIRTIO
                 vnfd:vnfd-connection-point-ref: subscriber-cp
-            -   vnfd:name: internet-cp
+            -   vnfd:name: c-internet-cp
                 vnfd:virtual-interface:
                     vnfd:type: VIRTIO
                 vnfd:vnfd-connection-point-ref: internet-cp
-            -   vnfd:name: service-cp
+            -   vnfd:name: d-service-cp
                 vnfd:virtual-interface:
                     vnfd:type: VIRTIO
                 vnfd:vnfd-connection-point-ref: service-cp
             vnfd:id: iovdu_0
             vnfd:guest-epa:
                 vnfd:cpu-pinning-policy: ANY
-            vnfd:image: PTS_7.40.00-0309_x86_64_el7
-            vnfd:image-checksum: 70d8007f31f5f93f79bcc78b03b5cf28
+            vnfd:image: PTS_7.40.02
             vnfd:name: vdu-1
+            vnfd:cloud-init-file: cloud_init.cfg
             vnfd:vm-flavor:
                 vnfd:memory-mb: '5120'
                 vnfd:storage-gb: '5'
