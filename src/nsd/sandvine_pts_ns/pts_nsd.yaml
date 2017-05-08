@@ -28,25 +28,25 @@ nsd:nsd-catalog:
             nsd:vnfd-id-ref: id_pts_vnf
         nsd:vld:
         -   nsd:id: mgmt-connection-id
-            nsd:name: mgmt connection
+            nsd:name: control
             nsd:vnfd-connection-point-ref:
             -   nsd:member-vnf-index-ref: '1'
                 nsd:vnfd-connection-point-ref: mgmt0
                 nsd:vnfd-id-ref: id_pts_vnf
         -   nsd:id: sub-connection-id
-            nsd:name: subscriber connection
+            nsd:name: subscriber
             nsd:vnfd-connection-point-ref:
             -   nsd:member-vnf-index-ref: '1'
                 nsd:vnfd-connection-point-ref: subscriber-cp
                 nsd:vnfd-id-ref: id_pts_vnf
         -   nsd:id: int-connection-id
-            nsd:name: internet connection
+            nsd:name: internet
             nsd:vnfd-connection-point-ref:
             -   nsd:member-vnf-index-ref: '1'
                 nsd:vnfd-connection-point-ref: internet-cp
                 nsd:vnfd-id-ref: id_pts_vnf
         -   nsd:id: service-connection-id 
-            nsd:name: service connection
+            nsd:name: service
             nsd:vnfd-connection-point-ref:
             -   nsd:member-vnf-index-ref: '1'
                 nsd:vnfd-connection-point-ref: service-cp
